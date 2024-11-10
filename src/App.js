@@ -1,14 +1,17 @@
 import { useState } from 'react';
 import { CiSearch } from 'react-icons/ci';
+import { TbTruckLoading } from "react-icons/tb";
 import './App.css';
 import CardManager from './CardManager';
 
 function App() {
   const [search, setSearch] = useState('');
   const [courses, setCourses] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const handleSearchClick = async () => {
     try {
+      setLoading(true);
       const response = await fetch(`http://localhost:4000/getAllCourses?search=${search}`);
       if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -18,6 +21,8 @@ function App() {
       setCourses(data);
     } catch (error) {
       console.error('Error fetching courses:', error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -36,7 +41,13 @@ function App() {
             <CiSearch style={{ cursor: 'pointer' }} />
           </a>
         </div>
-        <CardManager courses={courses} />
+
+        {loading && <div className="loading-container">
+          <p>Currently Searching For Your Courses</p>
+          <TbTruckLoading />
+        </div>}
+
+        {!loading && <CardManager courses={courses} />}
       </header>
     </div>
   );

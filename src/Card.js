@@ -5,8 +5,8 @@ function Card({ course }) {
             <h3><strong>{course.code}</strong> {course.name}</h3>
             <h4>{course.name}</h4>
             <p><strong>Description: </strong> {course.desc}</p>
-            <p><strong>Pre-Requisite: </strong> {course.preq.length > 0 ? course.preq.join(', ') : 'None'}</p>
-            <p><strong>Co-Requisite: </strong> {course.creq.length > 0 ? course.preq.join(', ') : 'None'}</p>
+            <p><strong>Pre-Requisite: </strong> {course.prer == "" || course.prer == null ? "None" : course.prer}</p>
+            <p><strong>Co-Requisite: </strong> {course.creq.length > 0 ? course.creq.join(', ') : 'None'}</p>
             <p><strong>Credits:</strong> {course.cred}</p>
         </div>
     )
