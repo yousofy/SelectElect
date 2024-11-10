@@ -1,13 +1,15 @@
 import React from 'react';
+import './Card.css';
+
 function Card({ course }) {
     return (
         <div className='course-card'>
-            <h3><strong>{course.code}</strong> {course.name}</h3>
-            <h4>{course.name}</h4>
-            <p><strong>Description: </strong> {course.desc}</p>
-            <p><strong>Pre-Requisite: </strong> {course.preq.length > 0 ? course.preq.join(', ') : 'None'}</p>
-            <p><strong>Co-Requisite: </strong> {course.creq.length > 0 ? course.preq.join(', ') : 'None'}</p>
-            <p><strong>Credits:</strong> {course.cred}</p>
+            <h3 className='course-code'><strong>{course.code}</strong></h3>
+            <h4 className='course-name'>{course.name}</h4>
+            <p className='course-description'>{course.desc}</p>
+            <p className='pre-req'><strong>Pre-Requisite: </strong> {course.prer == "" || course.prer == null ? "None" : course.prer}</p>
+            <p className='co-req'><strong>Co-Requisite: </strong> {course.creq.length > 0 ? course.creq.join(', ') : 'None'}</p>
+            <p className='course-credits'><strong>Credits:</strong> {course.cred}</p>
         </div>
     )
 }

@@ -7,6 +7,7 @@ import CardManager from './CardManager';
 function App() {
   const [search, setSearch] = useState('');
   const [courses, setCourses] = useState([]);
+  const [loading, setLoading] = useState(false);
   const [isFiltering, setIsFiltering] = useState(false);
   const [courseDepts, setCourseDepts] = useState([]);
   const [courseNumbers, setCourseNumbers] = useState([]);
@@ -26,6 +27,7 @@ function App() {
   const handleSearchClick = async () => {
     try {
       setIsFiltering(true);
+      setLoading(true);
       const response = await fetch(`http://localhost:4000/getAllCourses?search=${search}`);
       if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -36,6 +38,7 @@ function App() {
       console.error('Error fetching courses:', error);
     } finally {
       setIsFiltering(false);
+      setLoading(false);
     }
   };
 
@@ -62,16 +65,16 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Welcome to Select Elect</h1>
-        <div>
+        <h1>Welcome to SelectElect</h1>
+        <div className='search-container'>
           <input
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search for courses..."
+            id="search-bar"
           />
-          <a onClick={handleSearchClick}>
-            <CiSearch style={{ cursor: 'pointer' }} />
+          <a onClick={handleSearchClick} className='search-button'>
+            <CiSearch style={{ cursor: 'pointer' }} className='search-icon' />
           </a>
         </div>
 
@@ -111,7 +114,12 @@ function App() {
         </div>
 
         {!isFiltering && <CardManager courses={filteredCourses} />}
-      </header>
+        {loading && <div className="loading-container">
+          <p className='loading-text'>Currently Searching For Your Courses</p>
+          <TbTruckLoading className='loading-icon' />
+        </div>}
+
+        {!loading && <CardManager courses={courses} />}
     </div>
   );
 }
