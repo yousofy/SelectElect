@@ -23,3 +23,12 @@ SelectElect simplifies the elective selection process by allowing students to se
 - **Improved User Experience**: SelectElect’s user-friendly interface streamlines course selection, making it simpler and more intuitive. 😊✅
 
 SelectElect is your trusted companion for finding the right electives, empowering students to tailor their education according to their interests and academic requirements. 💪📚
+
+## How to Use
+1. Open a terminal and navigate to the folder that contains all the SelectElect files.
+2. Type `npm start` and press Enter to start the first part of the application.
+3. Open a second terminal window.
+4. Change directory into the terminal folder by typing `cd terminal` and press Enter.
+5. Type `npm start` again and press Enter to start the second part of the application.
+
+Once both terminals are running, SelectElect will be fully operational and ready for use!
