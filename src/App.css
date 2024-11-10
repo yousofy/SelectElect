@@ -107,3 +107,38 @@
   color: #ffffff;
   /* Sets icon color to white */
 }
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px; /* Adjust the space between the dropdowns */
+  margin-top: 15px; /* Add space below the search bar */
+}
+
+.dropdown button {
+  background-color: #2a4365; /* Match your theme */
+  color: white;
+  padding: 8px 15px; /* Compact padding */
+  border: none;
+  cursor: pointer;
+  border-radius: 20px; /* Make the buttons rounded */
+  font-size: 14px; /* Adjust text size */
+}
+
+.dropdown-content {
+  display: block;
+  position: absolute;
+  background-color: #2a4365; /* Match the background color */
+  color: white;
+  min-width: 150px; /* Adjust width if needed */
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  padding: 10px;
+  border-radius: 10px; /* Rounded corners for dropdown */
+  text-align: left; /* Align text to the left */
+}
+
+.dropdown-content label {
+  display: block;
+  margin: 0; /* Remove internal margin */
+  padding: 5px 0; /* Optional: Add padding for better spacing */
+}
