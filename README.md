@@ -1,70 +1,25 @@
-# Getting Started with Create React App
+# SelectElect: Your Elective Decision Companion ✨
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
+SelectElect is designed to support students facing the challenge of choosing electives from an overwhelming number of available courses. With countless faculties and departments offering diverse options, students often find it difficult to identify classes that align with their interests and academic needs. 😟📚
 
-## Available Scripts
+## Problem Statement
+Selecting suitable electives is a daunting task due to the sheer volume and variety of courses across various departments. The current process often requires extensive manual searches and comparisons, which can be both time-consuming and frustrating. ⏳ Students need a streamlined way to discover courses that resonate with their personal interests and fit within their academic constraints.
 
-In the project directory, you can run:
+## Solution
+SelectElect simplifies the elective selection process by allowing students to search for courses using keywords related to their interests. The app then provides options to filter these results by:
+- **Applicable Faculties**: Users can narrow down their results to specific faculties that offer the courses matching their search. 🌐
+- **Year Level**: Users can filter courses to match their current academic year, ensuring relevance to their educational progress. 📚
 
-### `npm start`
+## Key Features
+- **Interest-Based Keyword Search**: Students can input keywords that reflect their academic and personal interests to find courses that are most aligned with them. 🧩
+- **Faculties Filter**: Users can customize their search results to include or exclude specific faculties. 🗂
+- **Year Level Filtering**: The app helps students find courses appropriate for their year, making sure that they do not select courses outside their academic level. 📝
+- **Curated Course List**: SelectElect provides a refined list of courses that match the entered keywords, enabling students to make informed choices easily. 📝⭐
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Benefits
+- **Saves Time**: By automating and personalizing the course discovery process, students can find relevant electives faster. ⏱️
+- **Enhanced Decision-Making**: With filters that align with individual academic pathways, students can make better choices tailored to their goals. 🚀
+- **Improved User Experience**: SelectElect’s user-friendly interface streamlines course selection, making it simpler and more intuitive. 😊✅
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+SelectElect is your trusted companion for finding the right electives, empowering students to tailor their education according to their interests and academic requirements. 💪📚
