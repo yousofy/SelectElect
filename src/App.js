@@ -30,21 +30,22 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Welcome to Select Elect</h1>
-        <div>
+        <h1>Welcome to SelectElect</h1>
+        <div className='search-container'>
           <input
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search for courses..."
+            id="search-bar"
           />
-          <a onClick={handleSearchClick}>
-            <CiSearch style={{ cursor: 'pointer' }} />
+          <a onClick={handleSearchClick} className='search-button'>
+            <CiSearch style={{ cursor: 'pointer' }} className='search-icon' />
           </a>
         </div>
 
         {loading && <div className="loading-container">
-          <p>Currently Searching For Your Courses</p>
-          <TbTruckLoading />
+          <p className='loading-text'>Currently Searching For Your Courses</p>
+          <TbTruckLoading className='loading-icon' />
         </div>}
 
         {!loading && <CardManager courses={courses} />}

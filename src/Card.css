@@ -1,0 +1,84 @@
+/* General card container */
+.course-card {
+    background-color: #2b3a52;
+    /* Darker background for the card */
+    border-radius: 20px;
+    /* Rounded corners */
+    padding: 20px;
+    /* Space inside the card */
+    margin: 20px auto;
+    /* Centers the card horizontally */
+    color: #ffffff;
+    /* Text color */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* Subtle shadow */
+    position: relative;
+    /* Allows positioning of the star icon */
+    text-align: left;
+    /* Aligns text to the left */
+    width: 90%;
+    /* Matches the search bar width */
+    max-width: 70vw;
+    /* Ensures the card doesn't exceed a certain width */
+}
+
+/* Course code styling */
+.course-code {
+    font-size: 16px;
+    text-transform: uppercase;
+    /* Makes text uppercase */
+    color: #c2d3e1;
+    /* Lighter color for course code */
+    margin-bottom: 10px;
+    /* Space below the course code */
+}
+
+/* Course name styling */
+.course-name {
+    font-size: 24px;
+    /* Larger font for the course name */
+    font-weight: bold;
+    /* Emphasize the course name */
+    margin-bottom: 15px;
+    /* Space below the course name */
+}
+
+/* Course description styling */
+.course-description {
+    font-size: 16px;
+    margin-bottom: 15px;
+    /* Space below the description */
+    line-height: 1.5;
+    /* Adds better readability */
+}
+
+/* Pre-requisite and co-requisite styling */
+.pre-req,
+.co-req {
+    font-size: 14px;
+    margin-bottom: 10px;
+    /* Space below each */
+    line-height: 1.4;
+    /* Adds readability */
+}
+
+/* Course credits styling */
+.course-credits {
+    font-size: 14px;
+}
+
+/* Optional star icon styling (assuming you add an icon) */
+.course-card .star-icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    color: #ffffff;
+    border: 2px solid #e6399b;
+    /* Border around the icon */
+    border-radius: 50%;
+    /* Makes the border circular */
+    padding: 5px;
+    background-color: transparent;
+    /* Optional background */
+}
