@@ -13,6 +13,8 @@ function App() {
   const [courseNumbers, setCourseNumbers] = useState([]);
   const [selectedDeptFilters, setSelectedDeptFilters] = useState([]);
   const [selectedNumberFilters, setSelectedNumberFilters] = useState([]);
+  const [showDeptDropdown, setShowDeptDropdown] = useState(false);
+  const [showNumberDropdown, setShowNumberDropdown] = useState(false);
 
   useEffect(() => {
     // Populate unique department names based on fetched courses
@@ -79,34 +81,49 @@ function App() {
       </div>
 
       <div className="filter-container">
-        <h4>Filter by Department:</h4>
-        {courseDepts.map((dept) => (
-          <label key={dept}>
-            <input
-              type="checkbox"
-              value={dept}
-              onChange={() => handleDeptFilterChange(dept)}
-              checked={selectedDeptFilters.includes(dept)}
-            />
-            {dept}
-          </label>
-        ))}
+        <div className="dropdown">
+          <button onClick={() => setShowDeptDropdown(!showDeptDropdown)}>
+            Filter by Department
+          </button>
+          {showDeptDropdown && (
+            <div className="dropdown-content">
+              {courseDepts.map((dept) => (
+                <label key={dept}>
+                  <input
+                    type="checkbox"
+                    value={dept}
+                    onChange={() => handleDeptFilterChange(dept)}
+                    checked={selectedDeptFilters.includes(dept)}
+                  />
+                  {dept}
+                </label>
+              ))}
+            </div>
+          )}
+        </div>
+
+        <div className="dropdown">
+          <button onClick={() => setShowNumberDropdown(!showNumberDropdown)}>
+            Filter by Course Number
+          </button>
+          {showNumberDropdown && (
+            <div className="dropdown-content">
+              {courseNumbers.map((number) => (
+                <label key={number}>
+                  <input
+                    type="checkbox"
+                    value={number}
+                    onChange={() => handleNumberFilterChange(number)}
+                    checked={selectedNumberFilters.includes(number)}
+                  />
+                  {number}xx
+                </label>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
 
-      <div className="filter-container">
-        <h4>Filter by Course Number:</h4>
-        {courseNumbers.map((number) => (
-          <label key={number}>
-            <input
-              type="checkbox"
-              value={number}
-              onChange={() => handleNumberFilterChange(number)}
-              checked={selectedNumberFilters.includes(number)}
-            />
-            {number}xx
-          </label>
-        ))}
-      </div>
       {loading && <div className="loading-container">
         <p className='loading-text'>Currently Searching For Your Courses</p>
         <TbTruckLoading className='loading-icon' />
