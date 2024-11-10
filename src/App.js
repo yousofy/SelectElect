@@ -7,7 +7,7 @@ import CardManager from './CardManager';
 function App() {
   const [search, setSearch] = useState('');
   const [courses, setCourses] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [isFiltering, setIsFiltering] = useState(false);
   const [courseDepts, setCourseDepts] = useState([]);
   const [courseNumbers, setCourseNumbers] = useState([]);
   const [selectedDeptFilters, setSelectedDeptFilters] = useState([]);
@@ -25,7 +25,7 @@ function App() {
 
   const handleSearchClick = async () => {
     try {
-      setLoading(true);
+      setIsFiltering(true);
       const response = await fetch(`http://localhost:4000/getAllCourses?search=${search}`);
       if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -35,7 +35,7 @@ function App() {
     } catch (error) {
       console.error('Error fetching courses:', error);
     } finally {
-      setLoading(false);
+      setIsFiltering(false);
     }
   };
 
@@ -75,7 +75,7 @@ function App() {
           </a>
         </div>
 
-        {loading && <div className="loading-container">
+        {isFiltering && <div className="isFiltering-container">
           <p>Currently Searching For Your Courses</p>
           <TbTruckLoading />
         </div>}
@@ -110,7 +110,7 @@ function App() {
           ))}
         </div>
 
-        {!loading && <CardManager courses={filteredCourses} />}
+        {!isFiltering && <CardManager courses={filteredCourses} />}
       </header>
     </div>
   );
