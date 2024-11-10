@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { CiSearch } from 'react-icons/ci';
 import './App.css';
+import CardManager from './CardManager';
 
 function App() {
   const [search, setSearch] = useState('');
@@ -8,17 +9,17 @@ function App() {
 
   const handleSearchClick = async () => {
     try {
-        const response = await fetch(`http://localhost:5000/getAllCourses?search=${search}`);
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        const data = await response.json();
-        console.log('Data fetched:', data);
-        setCourses(data);
+      const response = await fetch(`http://localhost:4000/getAllCourses?search=${search}`);
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.json();
+      console.log('Data fetched:', data);
+      setCourses(data);
     } catch (error) {
-        console.error('Error fetching courses:', error);
+      console.error('Error fetching courses:', error);
     }
-};
+  };
 
 
   return (
@@ -35,11 +36,7 @@ function App() {
             <CiSearch style={{ cursor: 'pointer' }} />
           </a>
         </div>
-        <ul>
-          {courses.map((course) => (
-            <li key={course.id}>{course.name}</li>
-          ))}
-        </ul>
+        <CardManager courses={courses} />
       </header>
     </div>
   );
