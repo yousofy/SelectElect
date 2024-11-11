@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { CiSearch } from 'react-icons/ci';
 import { TbTruckLoading } from "react-icons/tb";
+import { IoMdArrowDropdown } from "react-icons/io";
 import './App.css';
 import CardManager from './CardManager';
 
@@ -81,10 +82,15 @@ function App() {
       </div>
 
       <div className="filter-container">
+        <p>Filter By:</p>
+
         <div className="dropdown">
-          <button onClick={() => setShowDeptDropdown(!showDeptDropdown)}>
-            Filter by Department
-          </button>
+          <div className="dropdown-box">
+            <button onClick={() => setShowDeptDropdown(!showDeptDropdown)}>
+              <span>Department</span>
+              <IoMdArrowDropdown className='dropdown-icon' />
+            </button>
+          </div>
           {showDeptDropdown && (
             <div className="dropdown-content">
               {courseDepts.map((dept) => (
@@ -103,9 +109,12 @@ function App() {
         </div>
 
         <div className="dropdown">
-          <button onClick={() => setShowNumberDropdown(!showNumberDropdown)}>
-            Filter by Course Number
-          </button>
+          <div className="dropdown-box">
+            <button onClick={() => setShowNumberDropdown(!showNumberDropdown)}>
+              <span>Course Number</span>
+              <IoMdArrowDropdown className='dropdown-icon' />
+            </button>
+          </div>
           {showNumberDropdown && (
             <div className="dropdown-content">
               {courseNumbers.map((number) => (

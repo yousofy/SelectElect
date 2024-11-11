@@ -8,10 +8,10 @@
   /* Keep padding as a fixed value for consistency */
 }
 
-/* Container for the input and button */
 .search-container {
   display: flex;
-  align-items: stretch;
+  align-items: center;
+  /* Align items vertically */
   width: 80%;
   /* Matches the width of the course cards */
   max-width: 60vw;
@@ -32,16 +32,44 @@
   border-right: none;
   /* Remove right border to merge with the button */
   outline: none;
-  font-size: 20px;
-  /* Adjust the font size as needed */
+  font-size: 18px;
+  /* Adjust font size */
   color: #ffffff;
-  /* Set the text color to white */
+  /* Set text color to white */
   background-color: #264261;
+  /* Set consistent background color */
   border-radius: 20px 0 0 20px;
   /* Rounded left corners */
-  height: 40px;
-  /* Set a fixed height */
+  height: 50px;
+  /* Set a consistent height */
   box-sizing: border-box;
+}
+
+.search-button {
+  background-color: #264261;
+  /* Matches input background */
+  border: 1px solid #ccc;
+  border-left: none;
+  /* Remove left border to blend with the input */
+  padding: 0 15px;
+  /* Adjust horizontal padding */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 0 20px 20px 0;
+  /* Rounded right corners */
+  height: 50px;
+  /* Match the height of the input */
+  box-sizing: border-box;
+}
+
+.search-icon {
+  color: #d1d1d1;
+  font-size: 22px;
+  /* Adjust icon size */
+  margin: 0;
+  /* Remove unnecessary margin */
 }
 
 /* Placeholder style */
@@ -59,7 +87,7 @@
   border: 1px solid #ccc;
   border-left: none;
   /* Remove left border to blend with the input */
-  padding: 0 15px;
+  padding: 0 20px;
   /* Adjusts horizontal padding */
   display: flex;
   align-items: center;
@@ -67,16 +95,20 @@
   cursor: pointer;
   border-radius: 0 20px 20px 0;
   /* Rounded right corners */
-  height: 40px;
-  /* Matches the height of the input */
+  height: 50px;
+  /* Increase the height of the button */
+  font-size: 18px;
+  /* Increase the font size */
   box-sizing: border-box;
 }
 
 /* Style for the search icon */
 .search-icon {
   color: #d1d1d1;
-  font-size: 18px;
-  /* Constant icon size */
+  font-size: 22px;
+  /* Increase icon size */
+  margin-left: 8px;
+  /* Add space between the text and the icon */
 }
 
 /* Container for the loading message and icon */
@@ -107,38 +139,114 @@
   color: #ffffff;
   /* Sets icon color to white */
 }
+
 .dropdown {
   position: relative;
   display: inline-block;
-  margin-right: 10px; /* Adjust the space between the dropdowns */
-  margin-top: 15px; /* Add space below the search bar */
+  margin-right: 10px;
+  /* Adjust the space between the dropdowns */
+  margin-top: 5px;
+  /* Reduce this value or remove it to raise the dropdowns */
+  align-items: center;
 }
 
 .dropdown button {
-  background-color: #2a4365; /* Match your theme */
+  background-color: #2a4365;
   color: white;
-  padding: 8px 15px; /* Compact padding */
+  padding: 10px 15px;
+  /* Adjust padding for a balanced look */
   border: none;
   cursor: pointer;
-  border-radius: 20px; /* Make the buttons rounded */
-  font-size: 14px; /* Adjust text size */
+  border-radius: 20px;
+  font-size: 16px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  /* Space between the text and the icons */
+}
+
+.dropdown-icon {
+  font-size: 18px;
+  /* Adjust size */
+}
+
+.dropdown button .dropdown-icon {
+  margin-left: 8px;
+  font-size: 22px;
+  /* Increase icon size */
 }
 
 .dropdown-content {
   display: block;
   position: absolute;
-  background-color: #2a4365; /* Match the background color */
+  background-color: #2a4365;
+  /* Match the background color */
   color: white;
-  min-width: 150px; /* Adjust width if needed */
+  min-width: 150px;
+  /* Adjust width if needed */
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   padding: 10px;
-  border-radius: 10px; /* Rounded corners for dropdown */
-  text-align: left; /* Align text to the left */
+  border-radius: 10px;
+  /* Rounded corners for dropdown */
+  text-align: left;
+  /* Align text to the left */
+  max-height: 200px;
+  /* Adjust as needed */
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  /* Optional: for better visibility */
+  padding: 5px;
+  /* Optional */
+  background-color: #f0f8ff;
+  /* Change to your desired color */
+  color: #333;
+  /* Change the text color as needed */
+  width: 150px;
+  /* Adjust width to make it skinnier */
 }
 
 .dropdown-content label {
   display: block;
-  margin: 0; /* Remove internal margin */
-  padding: 5px 0; /* Optional: Add padding for better spacing */
+  padding: 3px;
+  /* Reduce padding for a more compact look */
+  cursor: pointer;
+  font-size: 14px;
+  /* Optional: adjust font size for a slimmer appearance */
+}
+
+.dropdown-content label:hover {
+  background-color: #e6f7ff;
+  /* Optional: a hover effect */
+}
+
+.filter-container {
+  display: flex;
+  align-items: center;
+  /* Center vertically */
+  gap: 10px;
+  /* Space between elements */
+  margin-top: 20px;
+  /* Space above */
+  margin-left: -10px;
+  /* Shift container to the left */
+}
+
+.filter-container p {
+  margin: 0;
+  /* Remove any default margin */
+  font-size: 18px;
+  /* Adjust font size for better alignment */
+  padding-right: 5px;
+  /* Add a little space to separate from the dropdown */
+}
+
+.dropdown-box {
+  display: flex;
+  align-items: center;
+  /* Center text and arrow */
+  padding: 5px 10px;
+  /* Add padding for better appearance */
 }
