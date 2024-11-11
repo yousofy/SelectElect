@@ -4,6 +4,9 @@ import { TbTruckLoading } from "react-icons/tb";
 import { IoMdArrowDropdown } from "react-icons/io";
 import './App.css';
 import CardManager from './CardManager';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import CourseDetails from './CourseDetails';
+
 
 function App() {
   const [search, setSearch] = useState('');
@@ -143,4 +146,15 @@ function App() {
   );
 }
 
-export default App;
+function MainApp() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/course-details/:dept/:course" element={<CourseDetails />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default MainApp;
