@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* index.css */
+
+/* Apply a background color to the entire page */
+body,
+#root {
+  background-color: #002145;
+  /* Set your desired background color */
+  margin: 0;
+  /* Remove any default margin */
+  height: 100%;
+  /* Make sure the background color covers the full height */
+  color: white;
+  /* Optional: Set a default text color for better readability */
+}

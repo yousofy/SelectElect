@@ -1,0 +1,51 @@
+/* CourseDetails.css */
+
+.course-details-container {
+    background-color: #1b3a5e;
+    color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 1200px; /* Make the container wider */
+    margin: 30px auto; /* Reduce distance from the top and center on the screen */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    font-size: 1.2em; /* Increase overall text size */
+}
+
+.course-details-container h2,
+.course-details-container h3,
+.course-details-container h4 {
+    margin: 20px 0;
+}
+
+.course-stats-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 1.1em;
+}
+
+.course-stats-table th,
+.course-stats-table td {
+    border: 1px solid #4a6a94;
+    padding: 12px;
+    text-align: center;
+}
+
+.course-stats-table th {
+    background-color: #2a4a6f;
+    color: #cce1ff;
+    font-weight: bold;
+}
+
+.course-stats-table td {
+    background-color: #223e64;
+}
+
+.course-stats-table tr:nth-child(even) td {
+    background-color: #1e3658;
+}
+
+.course-details-container p {
+    font-size: 18px;
+    margin-top: 15px;
+}
