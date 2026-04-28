@@ -1,0 +1,397 @@
+/* --- UBC Premium Theme Colors ---
+   Background: #002145 (Deep Navy)
+   Cards/Containers: #003366 (Lighter Navy)
+   Interactive/Buttons: #0055B7 (UBC Primary Blue)
+   Accents/Highlights: #00A7E1 (UBC Light Blue)
+   Text: #FFFFFF & #D9E4F2
+----------------------------------- */
+
+body, #root, #app {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #002145;
+  min-height: 100vh;
+  color: #ffffff;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.2em;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+#home-view { 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  text-align: center; 
+  padding: 40px 20px; 
+}
+
+/* --- Search Bar --- */
+.search-container { 
+  display: flex; 
+  align-items: center; 
+  width: 80%; 
+  max-width: 800px; 
+  margin-top: 25px; 
+  border-radius: 30px; 
+  overflow: hidden; 
+  background-color: #003366;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-container:focus-within {
+  border-color: #00A7E1;
+  box-shadow: 0 0 0 4px rgba(0, 167, 225, 0.2);
+}
+
+#search-bar { 
+  flex: 1; 
+  padding: 15px 25px; 
+  border: none;
+  outline: none; 
+  font-size: 18px; 
+  color: #ffffff; 
+  background-color: transparent; 
+  height: 60px; 
+  box-sizing: border-box; 
+}
+
+#search-bar::placeholder { 
+  color: #8da4bd; 
+  opacity: 1; 
+  font-weight: 400;
+}
+
+.search-button { 
+  background-color: transparent; 
+  border: none;
+  padding: 0 25px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  cursor: pointer; 
+  height: 60px; 
+  transition: transform 0.2s;
+}
+
+.search-button:hover {
+  transform: scale(1.1);
+}
+
+.search-icon { 
+  width: 24px; 
+  height: 24px; 
+  color: #00A7E1; 
+}
+
+/* --- Filters & Dropdowns --- */
+.filter-container { 
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  flex-wrap: wrap; 
+  gap: 15px; 
+  margin-top: 30px; 
+  width: 80%; 
+  max-width: 1000px; 
+}
+
+.filter-container p { 
+  margin: 0; 
+  font-size: 16px; 
+  font-weight: 600;
+  color: #8da4bd;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.dropdown { position: relative; display: inline-block; }
+
+.dropdown button { 
+  background-color: #003366; 
+  color: white; 
+  padding: 12px 20px; 
+  border: 1px solid #004080; 
+  cursor: pointer; 
+  border-radius: 25px; 
+  font-size: 15px; 
+  font-weight: 500;
+  height: 45px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  gap: 10px; 
+  transition: all 0.2s ease;
+}
+
+.dropdown button:hover {
+  background-color: #0055B7;
+  border-color: #00A7E1;
+}
+
+.dropdown-icon { font-size: 12px; color: #00A7E1; }
+
+.dropdown-content { 
+  display: none; 
+  position: absolute; 
+  top: 55px; 
+  left: 0;
+  background-color: #002a5c; 
+  color: #ffffff; 
+  min-width: 240px; /* Widened to fit the text perfectly */
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.4); 
+  z-index: 10; 
+  padding: 10px 0; 
+  border-radius: 12px; 
+  text-align: left; 
+  max-height: 250px; 
+  overflow-y: auto; 
+  border: 1px solid #004080; 
+}
+
+.dropdown-content.show { display: block; animation: fadeIn 0.2s ease; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dropdown-content label { 
+  display: flex;
+  align-items: center;
+  padding: 10px 20px; 
+  cursor: pointer; 
+  font-size: 15px; 
+  transition: background-color 0.2s;
+  gap: 10px;
+  white-space: nowrap; /* Forces text to stay on a single line */
+}
+
+.dropdown-content label:hover { background-color: #0055B7; }
+
+/* Custom Scrollbar for Dropdowns */
+.dropdown-content::-webkit-scrollbar { width: 8px; }
+.dropdown-content::-webkit-scrollbar-track { background: #002145; border-radius: 10px; }
+.dropdown-content::-webkit-scrollbar-thumb { background: #0055B7; border-radius: 10px; }
+
+.clear-button { 
+  background-color: transparent; 
+  color: #ff6b6b; 
+  padding: 10px 20px; 
+  border: 1px solid #ff6b6b; 
+  border-radius: 25px; 
+  cursor: pointer; 
+  font-size: 15px; 
+  font-weight: bold;
+  transition: all 0.3s ease; 
+}
+
+.clear-button:hover { 
+  background-color: #ff6b6b; 
+  color: #ffffff;
+}
+
+/* --- Loading Indicator --- */
+.loading-container { display: flex; align-items: center; justify-content: center; margin-top: 40px; gap: 15px; }
+.loading-text { font-size: 20px; color: #00A7E1; margin: 0; font-weight: 500; }
+.loading-icon { width: 28px; height: 28px; color: #00A7E1; animation: spin 1.5s linear infinite; }
+@keyframes spin { 100% { transform: rotate(360deg); } }
+
+/* --- Course Cards --- */
+.search-results-count { 
+  margin: 40px 0 20px 0; 
+  color: #8da4bd; 
+  font-size: 16px; 
+  font-weight: 600; 
+  width: 90%; 
+  max-width: 900px; 
+  text-align: left; 
+  border-bottom: 1px solid #004080;
+  padding-bottom: 10px;
+}
+
+.course-list { 
+  width: 90%; 
+  max-width: 900px;
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  gap: 20px;
+}
+
+.course-card { 
+  background: linear-gradient(145deg, #003366, #002a5c);
+  border: 1px solid #004080;
+  border-radius: 16px; 
+  padding: 25px; 
+  color: #ffffff; 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); 
+  text-align: left; 
+  width: 100%; 
+  box-sizing: border-box;
+  cursor: pointer; 
+  transition: all 0.3s ease; 
+}
+
+.course-card:hover { 
+  transform: translateY(-4px); 
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  border-color: #0055B7;
+}
+
+.course-code { 
+  font-size: 16px; 
+  color: #00A7E1; 
+  margin: 0 0 8px 0; 
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.course-name { 
+  font-size: 24px; 
+  font-weight: 800; 
+  margin: 0 0 15px 0; 
+  color: #ffffff;
+}
+
+.course-description { 
+  font-size: 16px; 
+  margin-bottom: 20px; 
+  line-height: 1.6; 
+  color: #D9E4F2; 
+}
+
+.pre-req, .co-req { 
+  font-size: 14px; 
+  margin-bottom: 8px; 
+  line-height: 1.5; 
+  color: #8da4bd;
+}
+
+.pre-req strong, .co-req strong {
+  color: #ffffff;
+}
+
+/* --- Badges for Credits & Averages --- */
+.meta-container {
+  display: flex; 
+  justify-content: flex-start; 
+  gap: 15px;
+  margin-top: 20px; 
+  border-top: 1px solid #004080; 
+  padding-top: 20px;
+}
+
+.meta-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  background-color: #0055B7;
+  color: #ffffff;
+}
+
+.meta-badge.avg {
+  background-color: #002145;
+  border: 1px solid #00A7E1;
+  color: #00A7E1;
+}
+
+/* Highlight Text overriding */
+mark {
+  background-color: rgba(0, 167, 225, 0.3);
+  color: #ffffff;
+  padding: 0 2px;
+  border-radius: 3px;
+  border-bottom: 2px solid #00A7E1;
+}
+
+/* --- Course Details View --- */
+.course-details-container { 
+  background: linear-gradient(145deg, #003366, #002a5c);
+  color: #fff; 
+  padding: 40px; 
+  border-radius: 20px; 
+  max-width: 1000px; 
+  margin: 40px auto; 
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3); 
+  font-size: 1.1em;
+  border: 1px solid #004080;
+}
+
+.back-button { 
+  background-color: #002145; 
+  color: #00A7E1; 
+  border: 1px solid #00A7E1; 
+  padding: 10px 24px; 
+  border-radius: 25px; 
+  cursor: pointer; 
+  margin-bottom: 30px; 
+  font-size: 15px; 
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.back-button:hover { 
+  background-color: #00A7E1; 
+  color: #ffffff;
+}
+
+.course-details-container h2 {
+  color: #00A7E1;
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.course-details-container h3 {
+  font-size: 2.2rem;
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+.course-stats-table { 
+  width: 100%; 
+  border-collapse: separate; 
+  border-spacing: 0;
+  margin-top: 25px; 
+  font-size: 1em; 
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #004080;
+}
+
+.course-stats-table th, .course-stats-table td { 
+  padding: 15px; 
+  text-align: center; 
+  border-bottom: 1px solid #004080;
+}
+
+.course-stats-table th { 
+  background-color: #002145; 
+  color: #00A7E1; 
+  font-weight: 700; 
+  text-transform: uppercase;
+  font-size: 0.9em;
+  letter-spacing: 1px;
+}
+
+.course-stats-table td { 
+  background-color: transparent; 
+}
+
+.course-stats-table tr:last-child td {
+  border-bottom: none;
+}
+
+.course-stats-table tr:hover td { 
+  background-color: rgba(0, 85, 183, 0.2); 
+}

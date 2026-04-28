@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SelectElect</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    
+    <!-- === HOME VIEW === -->
+    <div id="home-view">
+      <h1>Welcome to SelectElect</h1>
+      
+      <div class="search-container">
+        <input 
+          type="text" 
+          id="search-bar" 
+          placeholder="Search by course code, name, or description..." 
+        />
+        <button id="search-button" class="search-button">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
+      </div>
+
+      <div class="filter-container">
+        <p>Filter By:</p>
+
+        <!-- Department Dropdown -->
+        <div class="dropdown" id="dropdown-dept">
+          <div class="dropdown-box">
+            <button id="btn-dept">
+              <span>Department</span>
+              <span class="dropdown-icon">▼</span>
+            </button>
+          </div>
+          <div class="dropdown-content" id="content-dept"></div>
+        </div>
+
+        <!-- Course Number Dropdown -->
+        <div class="dropdown" id="dropdown-num">
+          <div class="dropdown-box">
+            <button id="btn-num">
+              <span>Course Number</span>
+              <span class="dropdown-icon">▼</span>
+            </button>
+          </div>
+          <div class="dropdown-content" id="content-num"></div>
+        </div>
+
+        <p>Sort By:</p>
+
+        <!-- Sort Dropdown -->
+        <div class="dropdown" id="dropdown-sort">
+          <div class="dropdown-box">
+            <button id="btn-sort">
+              <span id="sort-label">Sort by Name</span>
+              <span class="dropdown-icon">▼</span>
+            </button>
+          </div>
+          <div class="dropdown-content" id="content-sort">
+            <label><input type="radio" name="sort" value="name" checked> Sort by Name</label>
+            <label><input type="radio" name="sort" value="code"> Sort by Course Code</label>
+            <label><input type="radio" name="sort" value="avg-high"> Average (High to Low)</label>
+            <label><input type="radio" name="sort" value="avg-low"> Average (Low to High)</label>
+            <label><input type="radio" name="sort" value="credits-low"> Credits (Low to High)</label>
+            <label><input type="radio" name="sort" value="credits-high"> Credits (High to Low)</label>
+          </div>
+        </div>
+        
+        <button id="clear-search-btn" class="clear-button" style="display: none; margin-top: 0; margin-left: auto;">Clear Search</button>
+      </div>
+
+      <!-- Loading Indicator -->
+      <div id="loading-container" class="loading-container" style="display: none;">
+        <p class="loading-text" id="loading-msg">Searching Courses & Fetching Live Grades...</p>
+        <svg class="loading-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
+      </div>
+
+      <!-- Results Count -->
+      <div id="search-results-count" class="search-results-count" style="display: none;"></div>
+
+      <!-- Course Cards Container -->
+      <div id="course-list" class="course-list"></div>
+    </div>
+
+    <!-- === COURSE DETAILS VIEW === -->
+    <div id="details-view" class="course-details-container" style="display: none;">
+      <button id="back-btn" class="back-button">← Back to Search</button>
+      
+      <div id="details-content">
+        <!-- Injected via JS -->
+      </div>
+
+      <div id="details-loading" style="display: none; margin-top: 20px;">
+        <p>Loading course session statistics from UBCGrades...</p>
+      </div>
+
+      <div id="stats-container" style="display: none;">
+        <h4>Recent Session Statistics:</h4>
+        <table class="course-stats-table">
+          <thead>
+            <tr>
+              <th>Session</th>
+              <th>Average (%)</th>
+              <th>Low (%)</th>
+              <th>High (%)</th>
+              <th>Reported</th>
+            </tr>
+          </thead>
+          <tbody id="stats-tbody">
+            <!-- Injected via JS -->
+          </tbody>
+        </table>
+        <p id="no-stats-msg" style="display: none;">No recent session statistics available for this course.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Local Static Data (Make sure course_information.js is in the folder!) -->
+  <script src="course_information.js"></script>
+  <!-- Main logic -->
+  <script src="app.js"></script>
+</body>
+</html>
