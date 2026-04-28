@@ -28,11 +28,4 @@ SelectElect simplifies the elective selection process by allowing students to se
 Get started with SelectElect today and make your elective selection process effortless and insightful!
 
 ## How to Use
-Access the application from the following website: [SelectElect](https://selectelect.vercel.app/)
-
-Alternatively, use the application on your local machine by following these steps:
-
-1. Ensure that Node.js is installed on your machine. If not, download and install it from [Node.js Official Website](https://nodejs.org/).
-2. Open a terminal and navigate to the folder containing the SelectElect files.
-3. Type `npm install` and press Enter to install dependencies.
-4. Type `npm start` and press Enter to launch the application.
+Access the application from the following website: [SelectElect](https://selectelect.netlify.app/)
